@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Test Page</title>
+
+    <!-- 🔴 PASTE GOOGLE TAG OR GTM HERE -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        button, a.btn {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            background: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        input {
+            width: 100%;
+            margin-top: 10px;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Conversion Test Page</h2>
+
+    <!-- 🟢 PURCHASE BUTTON -->
+    <button id="purchaseBtn">Simulate Purchase</button>
+
+    <!-- 🟢 FORM -->
+    <form id="leadForm">
+        <input type="text" placeholder="Name" required>
+        <input type="email" placeholder="Email" required>
+        <button type="submit" id="formSubmitBtn">Submit Form</button>
+    </form>
+
+    <!-- 🟢 CLICK BUTTON -->
+    <button id="clickBtn" style="background:#64748b;">Click Me (Event)</button>
+
+    <!-- 🟢 LINKS -->
+    <a href="https://google.com" target="_blank" id="externalLink">Visit External Site</a>
+    <a href="https://wa.me/1234567890" target="_blank" id="whatsappLink">Chat on WhatsApp</a>
+
+</div>
+
+<script>
+    // 🟢 PURCHASE → REDIRECT
+    document.getElementById('purchaseBtn').addEventListener('click', function() {
+        console.log("Purchase Clicked");
+        window.location.href = "thankyou.html";
+    });
+
+    // 🟢 FORM SUBMIT → REDIRECT
+    document.getElementById('leadForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log("Form Submitted");
+        window.location.href = "thankyou.html";
+    });
+
+    // 🟢 SIMPLE CLICK EVENT
+    document.getElementById('clickBtn').addEventListener('click', function() {
+        console.log("Button Click Event");
+        alert("Event Triggered!");
+    });
+
+    // 🟢 WHATSAPP CLICK
+    document.getElementById('whatsappLink').addEventListener('click', function() {
+        console.log("WhatsApp Clicked");
+    });
+</script>
+
+</body>
+      </html>
